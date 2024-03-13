@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Counter Section Using Html Css Javascript</title>
+    <meta name="keywords" content="footer, address, phone, icons" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+        </head> 
+        <body>
+
+          <div class="counter-wrapper">
+            <div class="counter">
+              <h1 class="count" data-target="1254">0</h1>
+              <p>New Visitor Every Week</p>
+            </div>
+
+            <div class="counter">
+              <h1 class="count" data-target="1254">0</h1>
+              <p>Happy Customers Every year</p>
+            </div>
+
+            <div class="counter">
+              <h1 class="count" data-target="12168">0</h1>
+              <p>Won Amazing Awards</p>
+            </div>
+            
+            <div class="counter">
+              <h1 class="count" data-target="732">0</h1>
+              <p>New Listing Every Week</p>
+            </div>
+          </div>
+            
+            
+
+          <script type="text/javascript">
+
+            const counts = document.querySelectorAll('.count')
+            const speed = 97
+            counts.forEach((counter) => {
+              function upData(){
+                  const target = Number(counter.getAttribute('data-target'))
+                  const count = Number(counter.innerText)
+                  const inc = target / speed
+                  if(count < target){
+                    counter.innerText = Math.floor(inc + count)
+                    setTimeout(upData, 1)
+                  }else{
+                    counter.innerText = target
+                  }
+              }
+              upData()
+            })
+          </script>
+
+    <script src="js/script.js"></script> 
+    
+    </body>
+    </html>
